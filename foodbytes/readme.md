@@ -3,10 +3,6 @@
 > Fresh. Delicious. Delivered to your door.
 
 ## 🌐 Live Demo & Repository
-
-- **Live Link:** [https://ayeshas-hub.github.io/Food-Bytes/foodbytes/](https://ayeshas-hub.github.io/Food-Bytes/foodbytes/)
-- **GitHub Repo:** [https://github.com/Ayeshas-hub/Food-Bytes](https://github.com/Ayeshas-hub/Food-Bytes)
-
 ---
 
 ## 📖 Project Overview

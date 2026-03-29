@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍔 FoodBytes - About</title>
+    <link rel="icon" href="../../../assets/favicon.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- NAVBAR -->
+    <nav class="bg-orange-600 p-4 sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <span class="text-white text-xl font-bold">🍔 FoodBytes</span>
+            <div class="flex gap-6">
+                <a href="../../../index.html" class="text-white hover:underline">Home</a>
+                <a href="../about/about.html" class="text-white hover:underline font-medium">About</a>
+                <a href="../contact/contact.html" class="text-white hover:underline">Contact</a>
+            </div>
+            <div class="flex gap-3 items-center">
+                <button id="themeToggle" onclick="toggleTheme()"
+                    class="bg-white text-orange-600 px-3 py-1 rounded-full text-sm font-bold hover:bg-gray-100">🌙</button>
+                <a href="../signin/signin.html" class="text-white border border-white px-3 py-1 rounded hover:bg-white hover:text-orange-600 text-sm">Sign In</a>
+                <a href="../signup/signup.html" class="bg-white text-orange-600 px-3 py-1 rounded hover:bg-gray-100 text-sm">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="bg-orange-700 text-white text-center py-14 px-4">
+        <h1 class="text-3xl font-bold mb-3">About FoodBytes</h1>
+        <p class="text-orange-100">Our story, our team, and our passion for great food.</p>
+    </section>
+
+    <!-- STATS -->
+    <section class="max-w-5xl mx-auto px-4 py-10">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">FoodBytes in Numbers</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                <p class="text-3xl font-bold text-orange-600">10K+</p>
+                <p class="text-gray-500 text-sm mt-1">Happy Customers</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                <p class="text-3xl font-bold text-orange-600">50+</p>
+                <p class="text-gray-500 text-sm mt-1">Menu Items</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                <p class="text-3xl font-bold text-orange-600">4.9⭐</p>
+                <p class="text-gray-500 text-sm mt-1">Average Rating</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                <p class="text-3xl font-bold text-orange-600">5+</p>
+                <p class="text-gray-500 text-sm mt-1">Years of Service</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="max-w-3xl mx-auto px-4 py-10">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Our Journey</h2>
+        <ol class="relative border-l border-orange-300">
+            <li class="mb-8 ml-6">
+                <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-orange-600 rounded-full text-white text-xs">1</span>
+                <h3 class="font-semibold text-gray-800 dark:text-white">2019 — FoodBytes Founded</h3>
+                <p class="text-gray-500 text-sm">Started as a small burger stall in Gulberg, Lahore.</p>
+            </li>
+            <li class="mb-8 ml-6">
+                <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-orange-600 rounded-full text-white text-xs">2</span>
+                <h3 class="font-semibold text-gray-800 dark:text-white">2020 — Expanded Menu</h3>
+                <p class="text-gray-500 text-sm">Grew to 20+ items including pizza, wraps, and desserts.</p>
+            </li>
+            <li class="mb-8 ml-6">
+                <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-orange-600 rounded-full text-white text-xs">3</span>
+                <h3 class="font-semibold text-gray-800 dark:text-white">2022 — Online Ordering Launched</h3>
+                <p class="text-gray-500 text-sm">Launched website and delivery service across Lahore.</p>
+            </li>
+            <li class="ml-6">
+                <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-orange-600 rounded-full text-white text-xs">4</span>
+                <h3 class="font-semibold text-gray-800 dark:text-white">2025 — 10,000 Customers!</h3>
+                <p class="text-gray-500 text-sm">Reached 10,000 happy customers across 5 areas of Lahore.</p>
+            </li>
+        </ol>
+    </section>
+
+    <!-- TEAM -->
+    <section class="bg-white dark:bg-gray-800 py-10 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Meet the Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow p-6 text-center">
+                    <div class="w-16 h-16 bg-orange-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">A</div>
+                    <h3 class="font-semibold text-gray-800 dark:text-white text-lg">Ayesha Zubair</h3>
+                    <p class="text-orange-600 text-sm">Founder & CEO</p>
+                    <p class="text-gray-500 text-sm mt-2">Passionate about food and technology.</p>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow p-6 text-center">
+                    <div class="w-16 h-16 bg-orange-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">Z</div>
+                    <h3 class="font-semibold text-gray-800 dark:text-white text-lg">Zaid Ahmed</h3>
+                    <p class="text-orange-600 text-sm">Head Chef</p>
+                    <p class="text-gray-500 text-sm mt-2">10 years of culinary experience.</p>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow p-6 text-center">
+                    <div class="w-16 h-16 bg-orange-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">M</div>
+                    <h3 class="font-semibold text-gray-800 dark:text-white text-lg">Maria Khan</h3>
+                    <p class="text-orange-600 text-sm">Operations Manager</p>
+                    <p class="text-gray-500 text-sm mt-2">Ensures every order is delivered fresh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCORDION -->
+    <section class="max-w-4xl mx-auto px-4 py-10">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">About Our Food</h2>
+        <div class="border rounded-lg mb-3">
+            <button onclick="this.nextElementSibling.classList.toggle('hidden')"
+                class="w-full text-left px-4 py-3 font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">
+                Where do you source your ingredients?
+            </button>
+            <div class="hidden px-4 py-3 text-gray-600 dark:text-gray-300 border-t">
+                We source all ingredients from local farms and trusted suppliers in Lahore.
+            </div>
+        </div>
+        <div class="border rounded-lg mb-3">
+            <button onclick="this.nextElementSibling.classList.toggle('hidden')"
+                class="w-full text-left px-4 py-3 font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">
+                Is your food halal certified?
+            </button>
+            <div class="hidden px-4 py-3 text-gray-600 dark:text-gray-300 border-t">
+                Absolutely! All our meat is 100% halal certified.
+            </div>
+        </div>
+        <div class="border rounded-lg mb-3">
+            <button onclick="this.nextElementSibling.classList.toggle('hidden')"
+                class="w-full text-left px-4 py-3 font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">
+                Do you have vegetarian options?
+            </button>
+            <div class="hidden px-4 py-3 text-gray-600 dark:text-gray-300 border-t">
+                Yes! We have a dedicated vegetarian menu with salads, veggie burgers, and plant-based options.
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="bg-gray-100 dark:bg-gray-900 py-10 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Customer Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                    <p class="text-gray-600 dark:text-gray-300 italic">"Best food in Lahore, hands down!"</p>
+                    <p class="mt-4 font-semibold text-gray-800 dark:text-white">— Usman, DHA Phase 5</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                    <p class="text-gray-600 dark:text-gray-300 italic">"I love that they use fresh ingredients. You can taste the difference!"</p>
+                    <p class="mt-4 font-semibold text-gray-800 dark:text-white">— Sara, Gulberg III</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-orange-700 text-white text-center py-6 mt-10">
+        <p class="text-sm">© 2025 FoodBytes | Ayesha Zubair | Web Engineering Assignment 02</p>
+        <div class="flex justify-center gap-6 mt-3">
+            <a href="../../../index.html" class="text-orange-200 hover:text-white text-sm">Home</a>
+            <a href="../about/about.html" class="text-orange-200 hover:text-white text-sm">About</a>
+            <a href="../contact/contact.html" class="text-orange-200 hover:text-white text-sm">Contact</a>
+        </div>
+    </footer>
+
+    <script src="../../../src/constants/themeConstants.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', initTheme)</script>
+</body>
+</html>

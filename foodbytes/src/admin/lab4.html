@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 04 - FoodBytes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <div class="max-w-6xl mx-auto">
+
+        <!-- HEADER -->
+        <div class="bg-orange-600 text-white p-6 rounded-lg mb-6 text-center">
+            <h1 class="text-3xl font-bold">🍔 FoodBytes - Lab 04</h1>
+            <p class="text-orange-100 mt-1">JavaScript CRUD + Array of Objects + Control Structures</p>
+            <p class="text-orange-200 text-sm mt-1">Ayesha Zubair | 70146508</p>
+        </div>
+
+        <!-- IF-ELSE OUTPUT SECTION -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Step 1 — If-Else Logic Output</h2>
+            <div id="ifElseOutput" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm"></div>
+        </div>
+
+        <!-- FOR LOOP OUTPUT -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Step 2 — For Loop Output (Table)</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left border border-gray-200">
+                    <thead class="bg-orange-600 text-white">
+                        <tr>
+                            <th class="px-4 py-2">#</th>
+                            <th class="px-4 py-2">Item</th>
+                            <th class="px-4 py-2">Price (Rs.)</th>
+                            <th class="px-4 py-2">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="forLoopBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- WHILE LOOP OUTPUT -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Step 3 — While Loop Output</h2>
+            <div id="whileLoopOutput" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- LOOPS WITH CONDITIONS -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Step 4 — Loops with Conditions (Categorized by Price)</h2>
+            <div id="loopConditionOutput" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+        </div>
+
+        <!-- ADD ITEM FORM -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">➕ Add New Menu Item</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Item Name *</label>
+                    <input type="text" id="inputName" placeholder="e.g. Smash Burger"
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Category *</label>
+                    <input type="text" id="inputCategory" placeholder="e.g. Burger"
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Price (Rs.) *</label>
+                    <input type="number" id="inputPrice" placeholder="e.g. 850"
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Rating</label>
+                    <select id="inputRating" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                        <option value="5">⭐ 5.0</option>
+                        <option value="4.5">⭐ 4.5</option>
+                        <option value="4">⭐ 4.0</option>
+                        <option value="3.5">⭐ 3.5</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Delivery Time (mins)</label>
+                    <input type="number" id="inputDelivery" placeholder="e.g. 25"
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Available</label>
+                    <select id="inputAvailable" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="addItem()"
+                class="mt-4 bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700">
+                Add Item
+            </button>
+            <p id="addError" class="text-red-500 text-sm mt-2 hidden">Please fill in all required fields.</p>
+            <p id="addSuccess" class="text-green-500 text-sm mt-2 hidden">✅ Item added successfully!</p>
+        </div>
+
+        <!-- SEARCH & FILTERS -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">🔍 Search & Filter</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <input type="text" id="searchName" placeholder="🔍 Search by name..."
+                    oninput="applyFilters()"
+                    class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                <select id="filterCategory" onchange="applyFilters()"
+                    class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                    <option value="">All Categories</option>
+                    <option value="Burger">Burger</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Wrap">Wrap</option>
+                    <option value="Dessert">Dessert</option>
+                </select>
+                <select id="filterPrice" onchange="applyFilters()"
+                    class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                    <option value="">All Prices</option>
+                    <option value="budget">Budget (under 500)</option>
+                    <option value="mid">Mid (500-900)</option>
+                    <option value="premium">Premium (900+)</option>
+                </select>
+                <select id="filterRating" onchange="applyFilters()"
+                    class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                    <option value="">All Ratings</option>
+                    <option value="top">Top Rated (4.8+)</option>
+                    <option value="good">Good (4.5-4.7)</option>
+                    <option value="average">Average (below 4.5)</option>
+                </select>
+                <select id="filterAvailable" onchange="applyFilters()"
+                    class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                    <option value="">All Items</option>
+                    <option value="Yes">Available</option>
+                    <option value="No">Not Available</option>
+                </select>
+                <button onclick="resetFilters()"
+                    class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">
+                    Reset Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- CARDS GRID -->
+        <h2 class="text-xl font-bold text-gray-800 mb-4">🍽️ Menu Items</h2>
+        <p id="noResults" class="hidden text-gray-500 text-center py-6">No items found matching your filters.</p>
+        <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"></div>
+
+    </div>
+
+    <!-- EDIT MODAL -->
+    <div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md mx-4">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">✏️ Edit Menu Item</h2>
+            <input type="hidden" id="editId">
+            <div class="mb-3">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Item Name</label>
+                <input type="text" id="editName"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+            </div>
+            <div class="mb-3">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                <input type="text" id="editCategory"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+            </div>
+            <div class="mb-3">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Price (Rs.)</label>
+                <input type="number" id="editPrice"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+            </div>
+            <div class="mb-3">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Rating</label>
+                <select id="editRating"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                    <option value="5">⭐ 5.0</option>
+                    <option value="4.5">⭐ 4.5</option>
+                    <option value="4">⭐ 4.0</option>
+                    <option value="3.5">⭐ 3.5</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Delivery Time (mins)</label>
+                <input type="number" id="editDelivery"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+            </div>
+            <div class="mb-5">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Available</label>
+                <select id="editAvailable"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="updateItem()"
+                    class="bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700 flex-1">
+                    Update
+                </button>
+                <button onclick="closeModal()"
+                    class="bg-gray-300 text-gray-700 px-6 py-2 rounded hover:bg-gray-400 flex-1">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./lab4.js"></script>
+</body>
+</html>
